@@ -1,7 +1,7 @@
 import React, {FunctionComponent} from 'react';
 import Button
                                   from '../Components/Representation/Atom/Button';
-import firebase                   from 'firebase';
+import {useLoginPopUp}            from '../Components/Containers/useLoginPopUp';
 
 interface OwnProps {
 }
@@ -11,10 +11,9 @@ type Props = OwnProps;
 const LoginPage: FunctionComponent<Props> = (props) => {
 
   const handleLogin = async () => {
-    const provider = new firebase.auth.GoogleAuthProvider()
-
+    const [authService] = useLoginPopUp();
     try {
-      const response = await firebase.auth().signInWithPopup(provider)
+      const response = await authService.signWithPopUp();
       console.log('response', response)
       console.log(`${response.user?.displayName} ha inciado sesion`)
     } catch (err) {
