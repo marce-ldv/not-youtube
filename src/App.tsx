@@ -1,6 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Firebase from './Settings/firebase.settings';
+
+const f = new Firebase();
 
 function App() {
   return (
