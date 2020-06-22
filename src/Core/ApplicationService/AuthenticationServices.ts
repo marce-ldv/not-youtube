@@ -2,7 +2,7 @@ import AuthProvider = firebase.auth.AuthProvider;
 import firebase from 'firebase';
 import UserCredential = firebase.auth.UserCredential;
 
-export class AuthenticationWithGoogle {
+export class AuthenticationServices {
   private _provider: AuthProvider;
 
   constructor() {
