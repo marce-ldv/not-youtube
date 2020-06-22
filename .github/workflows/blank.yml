@@ -22,8 +22,15 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
+    - name: Install
+      uses: CultureHQ/actions-yarn@v1.0.1
+      with:
+        args: install
+      
     - name: Build
-      uses: yarn build
+      uses: CultureHQ/actions-yarn@v1.0.1
+      with:
+        args: build 
       
     - name: Deploy to Firebase
       uses: lowply/deploy-firebase@v0.0.3
