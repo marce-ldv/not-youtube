@@ -2,9 +2,9 @@ import {AuthenticationServices} from '../../Core/ApplicationService/Authenticati
 import {useState}               from 'react';
 import UserCredential = firebase.auth.UserCredential;
 
-export const useAuthServicesPopUp = () => {
+export const useAuthServicesPopUp = (): [() => Promise<void>, UserCredential | null] => {
   const authService = new AuthenticationServices();
-  const [userData, setUserData] = useState<UserCredential>();
+  const [userData, setUserData] = useState<UserCredential | null>(null);
 
   const handleClick = async () => {
     try {
