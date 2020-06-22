@@ -1,15 +1,13 @@
-import AuthProvider = firebase.auth.AuthProvider;
-import firebase from 'firebase';
-import UserCredential = firebase.auth.UserCredential;
+import firebase, {auth} from 'firebase';
 
 export class AuthenticationServices {
-  private _provider: AuthProvider;
+  private _provider: auth.AuthProvider;
 
   constructor() {
     this._provider = new firebase.auth.GoogleAuthProvider();
   }
 
-  public async signWithPopUp(): Promise<UserCredential> {
+  public async signWithPopUp(): Promise<auth.UserCredential> {
     const {_provider} = this;
     return await firebase.auth().signInWithPopup(_provider);
   }
