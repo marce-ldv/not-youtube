@@ -3,7 +3,7 @@ import {useState}               from 'react';
 import {auth}                   from 'firebase';
 
 export const useAuthServicesPopUp = (): [() => Promise<void>, auth.UserCredential | null] => {
-  const authService = new AuthenticationServices();
+  const authService = AuthenticationServices.getInstance();
   const [userData, setUserData] = useState<auth.UserCredential | null>(null);
 
   const handleClick = async () => {
