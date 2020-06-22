@@ -3,7 +3,7 @@ import './App.css';
 import Firebase  from './Settings/firebase.settings';
 import LoginPage from './Page/Login';
 
-const f = new Firebase();
+new Firebase();
 
 function App() {
   return (
