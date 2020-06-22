@@ -34,3 +34,7 @@ jobs:
       
     - name: Deploy to Firebase
       uses: lowply/deploy-firebase@v0.0.3
+      env:
+        FIREBASE_TOKEN: 1//0hHhn15ok6ZS4CgYIARAAGBESNwF-L9IrXKMbq7xOdUiNnFqGrT_dHi6Ek3gDRJdYybYic_3NF48mcXHW54CXAzTQ88yL0tJri-I
+        FIREBASE_PROJECT: not-48bf6
+        TARGET_BRANCH: master
