@@ -1,8 +1,9 @@
-import React     from 'react';
+import React                              from 'react';
 import './App.css';
-import Firebase  from './Settings/firebase.settings';
-import LoginPage from './Page/Login';
-import Home      from './Page/Home';
+import Firebase                           from './Settings/firebase.settings';
+import LoginPage                          from './Page/Login';
+import Home                               from './Page/Home';
+import {createMuiTheme, MuiThemeProvider} from '@material-ui/core';
 
 new Firebase();
 
@@ -10,6 +11,9 @@ function App() {
   return (
     <div className="App">
       <Home/>
+      <MuiThemeProvider theme={createMuiTheme()}>
+        <LoginPage/>
+      </MuiThemeProvider>
     </div>
   );
 }

@@ -9,7 +9,7 @@ export class AuthenticationServices {
   }
 
   public static getInstance(): AuthenticationServices {
-    if (this.instance === null) this.instance = new AuthenticationServices();
+    if (this.instance === undefined) this.instance = new AuthenticationServices();
     return this.instance;
   }
 

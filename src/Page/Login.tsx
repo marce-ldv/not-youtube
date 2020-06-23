@@ -1,18 +1,26 @@
-import React, {FunctionComponent} from 'react';
-import Button
-                              from '../Components/Representation/Atom/Button';
-import {useAuthServicesPopUp} from '../Components/Containers/useAuthServicesPopUp';
+import React, {FunctionComponent}  from 'react';
+import Assignment                  from '@material-ui/icons/Assignment';
+import {Button, Paper, Typography} from '@material-ui/core';
+import {useSignInPopUp}           from '../Components/Containers/useSignInPopUp';
+import loginPageTemplate
+                                  from '../Components/Representation/Template/LoginPageTemplate';
+import sectionTemplate
+                                   from '../Components/Representation/Template/Container';
 
 const LoginPage: FunctionComponent = () => {
-  const [handleClick, userData] = useAuthServicesPopUp();
+  const [handleClick] = useSignInPopUp();
+  const {containerLogin} = loginPageTemplate();
+  const {sectionRoot} = sectionTemplate();
 
   return (
-    <>
-      <Button onClick={() => handleClick()}>
-        Login
-        {userData?.user?.displayName}
-      </Button>
-    </>
+    <div className={sectionRoot}>
+      <Paper square className={containerLogin}>
+        <Typography variant={'h1'}>Not Youtube</Typography>
+        <Button startIcon={<Assignment/>} onClick={handleClick}>
+          Login with google
+        </Button>
+      </Paper>
+    </div>
   );
 };
 
