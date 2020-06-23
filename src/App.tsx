@@ -10,8 +10,8 @@ new Firebase();
 function App() {
   return (
     <div className="App">
-      <Home/>
       <MuiThemeProvider theme={createMuiTheme()}>
+        <Home/>
         <LoginPage/>
       </MuiThemeProvider>
     </div>

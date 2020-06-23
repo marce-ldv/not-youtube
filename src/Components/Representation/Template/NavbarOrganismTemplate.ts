@@ -1,5 +1,5 @@
-import {makeStyles, Styles} from '@material-ui/styles';
-import {fade, Theme}        from '@material-ui/core';
+import {makeStyles}  from '@material-ui/styles';
+import {fade, Theme} from '@material-ui/core';
 
 type ClassKey =
   'root'
@@ -11,13 +11,14 @@ type ClassKey =
 const navbarOrganismTemplate = makeStyles<Theme, ClassKey>((theme) => ({
     root: {
       flexGrow: 1,
+      backgroundColor: '#0e0f0d',
     },
     title: {
       flexGrow: 1,
     },
     search: {
       position: 'relative',
-      borderRadius: theme.shape.borderRadius,
+      borderRadius: '4px',
       backgroundColor: fade(theme.palette.common.white, 0.15),
       '&:hover': {
         backgroundColor: fade(theme.palette.common.white, 0.25),
@@ -43,7 +44,6 @@ const navbarOrganismTemplate = makeStyles<Theme, ClassKey>((theme) => ({
     },
     inputInput: {
       padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
       paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
       transition: theme.transitions.create('width'),
       width: '100%',

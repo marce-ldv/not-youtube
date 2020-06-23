@@ -1,13 +1,10 @@
-import {makeStyles, Styles} from '@material-ui/styles';
-
 import React, {FunctionComponent} from 'react';
 import homePageTemplate
                                   from '../Components/Representation/Template/HomePageTemplate';
 import {
-  Avatar, Card, CardContent, CardHeader, Grid, IconButton, Paper
+  Avatar, Card, CardContent, CardHeader, Grid, IconButton
 }                                 from '@material-ui/core';
 import MoreVertIcon               from '@material-ui/icons/MoreVert';
-import CardMedia                  from '@material-ui/core/CardMedia';
 import Paella                     from './paella.jpeg'
 import Navbar
                                   from '../Components/Representation/Organism/Navbar';
@@ -17,10 +14,8 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-const useStyles = makeStyles(homePageTemplate);
-
-const Home: FunctionComponent<Props> = (props) => {
-  const {containerHome, card} = useStyles();
+const Home: FunctionComponent<Props> = () => {
+  const {containerHome, card} = homePageTemplate();
 
   const renderCard = () => {
     return (
@@ -50,14 +45,12 @@ const Home: FunctionComponent<Props> = (props) => {
 
   return (
     <Grid container>
-
-      <Navbar />
-
-      <Grid item xs={12} className={containerHome} spacing={4}>
-        {[0, 1, 2, 3, 4, 5, 6, 7].map((value) => (
-          <>
+      <Navbar/>
+      <Grid item xs={12} className={containerHome}>
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((value, key) => (
+          <React.Fragment key={key}>
             {renderCard()}
-          </>
+          </React.Fragment>
         ))}
       </Grid>
     </Grid>
