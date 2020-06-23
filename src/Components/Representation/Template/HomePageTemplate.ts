@@ -1,5 +1,5 @@
 import {makeStyles}     from '@material-ui/styles';
-import {lighten, Theme} from '@material-ui/core';
+import {Theme} from '@material-ui/core';
 
 type ClassKey = 'containerHome' | 'card'
 const homePageTemplate = makeStyles<Theme, ClassKey>(() => ({

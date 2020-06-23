@@ -1,6 +1,4 @@
 import React, {FunctionComponent} from 'react';
-import homePageTemplate
-                                  from '../Components/Representation/Template/HomePageTemplate';
 import {
   Avatar, Card, CardContent, CardHeader, Grid, IconButton
 }                                 from '@material-ui/core';
@@ -8,6 +6,9 @@ import MoreVertIcon               from '@material-ui/icons/MoreVert';
 import Paella                     from './paella.jpeg'
 import Navbar
                                   from '../Components/Representation/Organism/Navbar';
+import homePageTemplate
+                                  from '../Components/Representation/Template/HomePageTemplate';
+
 
 interface OwnProps {
 }
