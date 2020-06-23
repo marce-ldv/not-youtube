@@ -37,4 +37,3 @@ jobs:
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         FIREBASE_PROJECT: not-48bf6
-        TARGET_BRANCH: main
