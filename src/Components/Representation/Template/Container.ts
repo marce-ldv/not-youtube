@@ -1,9 +1,9 @@
-import {Styles} from '@material-ui/styles';
-import {Theme}                from '@material-ui/core';
+import {makeStyles, Styles} from '@material-ui/styles';
+import {Theme}              from '@material-ui/core';
 
 type ClassKey = 'sectionRoot';
 
-const sectionTemplate: Styles<Theme, any, ClassKey> = (theme) => ({
+const sectionTemplate = makeStyles<Theme, ClassKey>((theme) => ({
   sectionRoot: {
     width: '100%',
     margin: 'auto',
@@ -14,6 +14,6 @@ const sectionTemplate: Styles<Theme, any, ClassKey> = (theme) => ({
       width: `1200px`,
     },
   }
-})
+}))
 
 export default sectionTemplate;

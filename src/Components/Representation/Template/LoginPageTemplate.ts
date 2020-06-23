@@ -1,8 +1,9 @@
-import {StyleRules} from '@material-ui/styles';
+import {makeStyles, StyleRules} from '@material-ui/styles';
+import {Theme}                  from '@material-ui/core';
 
 type ClassKey = 'containerLogin';
 
-const loginPageTemplate: StyleRules<any, ClassKey> = {
+const loginPageTemplate = makeStyles<Theme, ClassKey>({
   containerLogin: {
     padding: '10px',
     margin: 'auto',
@@ -11,6 +12,6 @@ const loginPageTemplate: StyleRules<any, ClassKey> = {
     // border: 'solid 1px black',
     // borderRadius: '10px',
   }
-}
+});
 
 export default loginPageTemplate;
